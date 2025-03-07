@@ -2,6 +2,8 @@
 
 ![MediVars Banner](public/images/heroimage1.png)
 
+## [Check out the live web app](https://medivars.netlify.app/)
+
 A modern telemedicine platform connecting patients with healthcare providers through video consultations, instant messaging, and online appointment management.
 
 ## Features
@@ -65,7 +67,8 @@ A modern telemedicine platform connecting patients with healthcare providers thr
 2. Install dependencies:
    ```bash
    npm install
-   
+   ```
+
 3. Start development server:
    ```bash
    npm run dev
@@ -106,6 +109,7 @@ A modern telemedicine platform connecting patients with healthcare providers thr
 
 **Admin Panel:**
 1. Approve or reject doctor applications
+
 2. Manage platform users and analytics
 
 
@@ -119,11 +123,10 @@ A modern telemedicine platform connecting patients with healthcare providers thr
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
-
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ## Contact
 Project Maintainer: [Lahori Venkatesh] - lahorivenkatesh709@gmail.com
 
-Project Link: [(https://medivars.netlify.app/)]
 
 ## Acknowledgments
 - React community
