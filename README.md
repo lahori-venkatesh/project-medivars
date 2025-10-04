@@ -1,6 +1,8 @@
 # MediVars - Complete Telemedicine Platform
 
-A comprehensive full-stack telemedicine platform with separate frontend, admin panel, and backend services.
+## [🌐 Check out the live web app](https://medivars.netlify.app/)
+
+A comprehensive full-stack telemedicine platform connecting patients with healthcare providers through video consultations, instant messaging, and online appointment management.
 
 ## 🏗️ Project Structure
 
@@ -129,11 +131,27 @@ ADMIN_URL=http://localhost:3001
 - `POST /api/auth/login` - User login
 - `POST /api/auth/admin/login` - Admin login
 
+<<<<<<< HEAD
 ### Users & Doctors
 - `GET /api/doctors` - Get all doctors
 - `GET /api/doctors/:id` - Get doctor by ID
 - `GET /api/users/profile` - Get user profile
 - `PUT /api/users/profile` - Update user profile
+=======
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/medivars.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start development server:
+   ```bash
+   npm run dev
+   ```
+>>>>>>> 5559e4be828f73933f92511018f9bb90ceba831d
 
 ### Appointments
 - `POST /api/appointments` - Create appointment
@@ -174,9 +192,16 @@ cd doctors-portal && npm run build
 # Admin Panel
 cd admin-panel && npm run build
 
+<<<<<<< HEAD
 # Backend
 cd backend && npm start
 ```
+=======
+**Admin Panel:**
+1. Approve or reject doctor applications
+
+2. Manage platform users and analytics
+>>>>>>> 5559e4be828f73933f92511018f9bb90ceba831d
 
 ## 🔐 Security Features
 
@@ -220,11 +245,20 @@ cd backend && npm start
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+<<<<<<< HEAD
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📞 Support
+=======
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+## Contact
+Project Maintainer: [Lahori Venkatesh] - lahorivenkatesh709@gmail.com
+
+>>>>>>> 5559e4be828f73933f92511018f9bb90ceba831d
 
 For support, email lahorivenkatesh709@gmail.com or create an issue in the repository.
 
