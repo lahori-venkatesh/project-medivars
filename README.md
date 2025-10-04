@@ -1,130 +1,236 @@
-# MediVars - Doctors Consultation Web App
+# MediVars - Complete Telemedicine Platform
 
-![MediVars Banner](public/images/heroimage1.png)
+A comprehensive full-stack telemedicine platform with separate frontend, admin panel, and backend services.
 
-A modern telemedicine platform connecting patients with healthcare providers through video consultations, instant messaging, and online appointment management.
+## 🏗️ Project Structure
 
-## Features
+```
+medivars/
+├── frontend/                 # Patient-facing React app (Port 3000)
+├── doctors-portal/          # Doctors dashboard React app (Port 3002)
+├── admin-panel/             # Admin dashboard React app (Port 3001)
+├── backend/                 # Node.js Express API server (Port 5000)
+├── shared/                  # Shared TypeScript types and utilities
+└── README.md               # This file
+```
 
-- **Patient Features**
-  - Search and filter doctors by specialty, availability, and rating
+## 🚀 Quick Start
 
-  - Choose consultation type: Audio, Video, Chat, In-Visit
+### Prerequisites
+- Node.js (v18 or higher)
+- MongoDB (local or cloud)
+- npm or yarn
 
-  - Schedule appointments with preferred doctors by selecting date and time
+### 1. Backend Setup
 
-  - Instant Booking within 5 minutes based on urgency (Low, Medium, High)
+```bash
+cd backend
+npm install
+cp .env.example .env
+# Edit .env with your configuration
+npm run dev
+```
 
-  - Secure payment integration for consultation booking
+### 2. Frontend Setup
 
-  - Receive appointment reminders and notifications 
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-- **Doctor Features**
-  - Seamless onboarding process for doctors
+### 3. Doctors Portal Setup
 
-  - Manage profile and availability
+```bash
+cd doctors-portal
+npm install
+npm run dev
+```
 
-  - Accept or reject appointments
+### 4. Admin Panel Setup
 
-  - Conduct virtual consultations through audio, video, or chat
+```bash
+cd admin-panel
+npm install
+npm run dev
+```
 
-  - View patient details before consultations
+## 🔧 Environment Configuration
 
+### Backend (.env)
+```env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/medivars
+JWT_SECRET=your_jwt_secret_key_here
+STRIPE_SECRET_KEY=your_stripe_secret_key
+FRONTEND_URL=http://localhost:3000
+ADMIN_URL=http://localhost:3001
+```
 
+## 📱 Applications
 
-- **Admin Features**
-  - User and doctor management
-  - Analytics dashboard
-  - Content moderation
-  - System configuration
+### Frontend (Patient App) - http://localhost:3000
+- Patient registration and login
+- Doctor search and filtering
+- Appointment booking
+- Video consultations
+- Payment processing
+- Medical records
 
-## Technologies Used
+### Doctors Portal - http://localhost:3002
+- Doctor registration and verification
+- Professional dashboard
+- Appointment management
+- Patient consultation tools
+- Schedule management
+- Earnings tracking
+- Secure messaging with patients
 
-- **Frontend**
-  - React + TypeScript for building the user interface
+### Admin Panel - http://localhost:3001
+- Doctor verification and management
+- Patient management
+- Appointment oversight
+- Analytics and reporting
+- System configuration
 
-  - Vite for fast development and optimized builds
+**Admin Credentials:**
+- Email: admin@medivars.com
+- Password: admin123
 
-  - Tailwind CSS for modern and responsive UI design
+### Backend API - http://localhost:5000
+- RESTful API endpoints
+- JWT authentication
+- MongoDB integration
+- Real-time messaging (Socket.io)
+- Payment processing (Stripe)
 
-  - React Router for seamless navigation
+## 🛠️ Technology Stack
 
-- **UI Enhancements**
-  - Framer Motion for smooth animations
+### Frontend & Admin Panel
+- **React 18** with TypeScript
+- **Vite** for fast development
+- **Tailwind CSS** for styling
+- **React Router** for navigation
+- **Axios** for API calls
 
-  - React Hot Toast for real-time notifications
+### Backend
+- **Node.js** with Express.js
+- **MongoDB** with Mongoose ODM
+- **JWT** for authentication
+- **Socket.io** for real-time features
+- **Stripe** for payments
+- **Bcrypt** for password hashing
 
-  - Date-fns for efficient date and time management
+## 🔗 API Endpoints
 
-## Installation
+### Authentication
+- `POST /api/auth/register/patient` - Patient registration
+- `POST /api/auth/register/doctor` - Doctor registration
+- `POST /api/auth/login` - User login
+- `POST /api/auth/admin/login` - Admin login
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/medivars.git
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   
-3. Start development server:
-   ```bash
-   npm run dev
-   ```
+### Users & Doctors
+- `GET /api/doctors` - Get all doctors
+- `GET /api/doctors/:id` - Get doctor by ID
+- `GET /api/users/profile` - Get user profile
+- `PUT /api/users/profile` - Update user profile
 
-## Usage
+### Appointments
+- `POST /api/appointments` - Create appointment
+- `GET /api/appointments/my` - Get user appointments
+- `PATCH /api/appointments/:id/status` - Update appointment status
 
-**Patient Flow:**
-1. Register/Login using email or social authentication
+### Admin
+- `GET /api/admin/stats` - Dashboard statistics
+- `GET /api/admin/doctors` - Manage doctors
+- `GET /api/admin/patients` - Manage patients
+- `PATCH /api/admin/doctors/:id/verify` - Verify doctor
 
-2. Search for doctors based on specialty and filters
+## 🚀 Development
 
-3. Choose Audio, Video, Chat, or In-Visit consultation
+### Running All Services
+```bash
+# Terminal 1 - Backend
+cd backend && npm run dev
 
-4. Select preferred date and time for booking
+# Terminal 2 - Frontend
+cd frontend && npm run dev
 
-5. Securely complete the payment process
+# Terminal 3 - Doctors Portal
+cd doctors-portal && npm run dev
 
-6. Attend the scheduled consultation
+# Terminal 4 - Admin Panel
+cd admin-panel && npm run dev
+```
 
-**Doctor Flow:**
-1. Complete onboarding process
-2. Set availability schedule
-3. Manage appointments
-4. Conduct video consultations
-5. Update patient records
+### Building for Production
+```bash
+# Frontend
+cd frontend && npm run build
 
-**Instant Booking Flow:**
-1. Select Urgency Level: Low, Medium, High
-2. Provide necessary patient details and contact information
-3. Get connected to an available doctor within 5 minutes
+# Doctors Portal
+cd doctors-portal && npm run build
 
-**Doctor Flow:**
-1. Complete seamless onboarding process
-2. Set up profile and availability
-3. Accept or reject patient bookings
-4. Conduct consultations via Audio, Video, or Chat
+# Admin Panel
+cd admin-panel && npm run build
 
-**Admin Panel:**
-1. Approve or reject doctor applications
-2. Manage platform users and analytics
+# Backend
+cd backend && npm start
+```
 
+## 🔐 Security Features
 
+- JWT-based authentication
+- Password hashing with bcrypt
+- Protected routes and middleware
+- Input validation and sanitization
+- CORS configuration
+- Environment variable protection
 
-**Contributions are welcome! Please follow these steps:**
+## 📊 Features
+
+### Patient Features
+- ✅ User registration and authentication
+- ✅ Doctor search and filtering
+- ✅ Multiple consultation types (Audio, Video, Chat, In-Person)
+- ✅ Appointment scheduling
+- ✅ Instant booking with urgency levels
+- ✅ Secure payment integration
+- ✅ Liked doctors management
+
+### Doctor Features
+- ✅ Doctor registration and verification
+- ✅ Profile and availability management
+- ✅ Appointment management
+- ✅ Patient consultation tools
+- ✅ Earnings tracking
+
+### Admin Features
+- ✅ Doctor verification system
+- ✅ User and appointment management
+- ✅ Dashboard analytics
+- ✅ System configuration
+- ✅ Content moderation tools
+
+## 🤝 Contributing
+
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
-Distributed under the MIT License. See `LICENSE` for more information.
+## 📄 License
 
-## Contact
-Project Maintainer: [Lahori Venkatesh] - lahorivenkatesh709@gmail.com
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Project Link: [(https://medivars.netlify.app/)]
+## 📞 Support
 
-## Acknowledgments
-- React community
+For support, email lahorivenkatesh709@gmail.com or create an issue in the repository.
 
+## 🌟 Acknowledgments
+
+- React community for excellent documentation
+- MongoDB for robust database solutions
+- Stripe for secure payment processing
+- All contributors and testers
